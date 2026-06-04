@@ -309,6 +309,100 @@
     align-self: flex-start;
   }
 
+  /* ── SERVICES ── */
+  #services { border-top: 0.5px solid var(--rule); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    border: 0.5px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-card {
+    background: var(--dark2);
+    padding: 2rem 1.75rem;
+    transition: background 0.18s;
+    position: relative;
+  }
+
+  .service-card:hover { background: var(--dark3); }
+
+  .service-card + .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 0.5px; height: 100%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .service-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+  }
+
+  .service-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(200,134,10,0.1);
+    border: 0.5px solid rgba(200,134,10,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .service-card-icon i { font-size: 18px; color: var(--gold-light); }
+
+  .service-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    line-height: 1.3;
+  }
+
+  .service-card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .service-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text-dim);
+    padding: 8px 0;
+    border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  }
+
+  .service-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .service-list li i {
+    font-size: 15px;
+    color: rgba(200,134,10,0.6);
+    flex-shrink: 0;
+  }
+
   /* ── FOOTER ── */
   footer {
     border-top: 0.5px solid var(--rule);
@@ -372,6 +466,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -414,6 +509,51 @@
   <p class="about-body fade-in">
     Zentral Construction Materials Trading is your trusted local supplier of quality construction materials in Lingunan, Valenzuela City. We provide strong, reliable blocks and supplies for residential and commercial projects alike — whether you're building a home, an extension, or a full structure. Reach out to us through Facebook or email for inquiries and quotations. We're here to help you build better.
   </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label fade-in">What We Offer</p>
+  <h2 class="section-title fade-in">Our Services</h2>
+  <div class="section-rule fade-in"></div>
+
+  <div class="services-grid">
+
+    <!-- Construction Materials -->
+    <div class="service-card fade-in">
+      <div class="service-card-header">
+        <div class="service-card-icon"><i class="ti ti-building-warehouse"></i></div>
+        <div>
+          <div class="service-card-tag">Materials Supply</div>
+          <div class="service-card-title">Construction Materials</div>
+        </div>
+      </div>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Hollow Blocks</li>
+        <li><i class="ti ti-check"></i> Cement &amp; Aggregates</li>
+        <li><i class="ti ti-check"></i> Other Supplies</li>
+      </ul>
+    </div>
+
+    <!-- Heavy Equipment Rental -->
+    <div class="service-card fade-in" style="transition-delay:0.1s">
+      <div class="service-card-header">
+        <div class="service-card-icon"><i class="ti ti-tractor"></i></div>
+        <div>
+          <div class="service-card-tag">Equipment Rental</div>
+          <div class="service-card-title">Heavy Equipment</div>
+        </div>
+      </div>
+      <ul class="service-list">
+        <li><i class="ti ti-check"></i> Backhoe</li>
+        <li><i class="ti ti-check"></i> Bulldozer</li>
+        <li><i class="ti ti-check"></i> Road Roller</li>
+        <li><i class="ti ti-check"></i> 10-Wheeler Dump Truck</li>
+        <li><i class="ti ti-check"></i> 12-Wheeler Dump Truck</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <!-- CONTACT -->
